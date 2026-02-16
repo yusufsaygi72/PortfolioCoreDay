@@ -1,0 +1,22 @@
+﻿@model PortfolioCoreDay.Entities.Education
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Yeni Eğitim Ekle</h3>
+    <form action="/Education/CreateEducation" method="post">
+        <label>Eğitim Başlığı (Örn: Lisans)</label>
+        <input type="text" name="Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Üniversite</label>
+        <input type="text" name="Universty" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Bölüm</label>
+        <input type="text" name="Department" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Tarih Aralığı</label>
+        <input type="text" name="EducationDate" class="form-control" style="border: 1px solid #000;" placeholder="2018 - 2022" required />
+        <br />
+        <button type="submit" class="btn btn-primary">Eğitimi Kaydet</button>
+    </form>
+</div>

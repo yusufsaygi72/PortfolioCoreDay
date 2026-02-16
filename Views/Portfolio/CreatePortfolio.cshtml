@@ -1,0 +1,31 @@
+﻿@model PortfolioCoreDay.Entities.Portfolio
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Yeni Proje Ekle</h3>
+    <form action="/Portfolio/CreatePortfolio" method="post">
+        <label>Proje Başlığı</label>
+        <input type="text" name="Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Kategori</label>
+        <select name="CategoryId" class="form-control" style="border: 1px solid #000;" required>
+            <option value="">Kategori Seçiniz</option>
+            @foreach (var item in (SelectList)ViewBag.Categories)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+        </select>
+        <br />
+        <label>Görsel URL</label>
+        <input type="text" name="ImageUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Github URL</label>
+        <input type="text" name="GithubUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" style="border: 1px solid #000;" required></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary" style="width:100%">Projeyi Kaydet</button>
+    </form>
+</div>

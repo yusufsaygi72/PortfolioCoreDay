@@ -1,0 +1,27 @@
+﻿@model PortfolioCoreDay.Entities.Experience
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>Yeni Deneyim Ekle</h3>
+    <form action="/Experience/CreateExperience" method="post">
+        <label>Şirket Adı</label>
+        <input type="text" name="CompanyName" class="form-control" required />
+        <br />
+
+        <label>Başlık (Pozisyon)</label>
+        <input type="text" name="Title" class="form-control" required />
+        <br />
+
+        <label>Deneyim Tarihi</label>
+        <input type="text" name="ExperienceDate" class="form-control" placeholder="Örn: 2020-2023" required />
+        <br />
+
+        <label>Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" required></textarea>
+        <br />
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Kaydet</button>
+    </form>
+</div>

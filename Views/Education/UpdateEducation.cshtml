@@ -1,0 +1,28 @@
+﻿@model PortfolioCoreDay.Entities.Education
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Eğitim Güncelle</h3>
+    <form action="/Education/UpdateEducation" method="post">
+        <input type="hidden" name="EducationId" value="@Model.EducationId" />
+
+        <label>Eğitim Başlığı</label>
+        <input type="text" name="Title" value="@Model.Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Üniversite</label>
+        <input type="text" name="Universty" value="@Model.Universty" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Bölüm</label>
+        <input type="text" name="Department" value="@Model.Department" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Tarih Aralığı</label>
+        <input type="text" name="EducationDate" value="@Model.EducationDate" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <button type="submit" class="btn btn-success">Değişiklikleri Kaydet</button>
+    </form>
+</div>

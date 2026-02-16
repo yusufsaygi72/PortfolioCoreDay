@@ -1,0 +1,31 @@
+﻿@model List<PortfolioCoreDay.Entities.Portfolio>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Proje Listesi</h3>
+    <table class="table table-bordered" style="border: 2px solid #000;">
+        <thead style="background-color: #f8f9fa;">
+            <tr>
+                <th style="border: 1px solid #000;">#</th>
+                <th style="border: 1px solid #000;">Proje Başlığı</th>
+                <th style="border: 1px solid #000;">Kategori</th>
+                <th style="border: 1px solid #000;">Sil</th>
+                <th style="border: 1px solid #000;">Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="border: 1px solid #000;">@item.PortfolioId</td>
+                    <td style="border: 1px solid #000;">@item.Title</td>
+                    <td style="border: 1px solid #000;">@(item.Category?.CategoryName ?? "Kategori Yok")</td>
+                    <td style="border: 1px solid #000;"><a href="/Portfolio/DeletePortfolio/@item.PortfolioId" class="btn btn-danger">Sil</a></td>
+                    <td style="border: 1px solid #000;"><a href="/Portfolio/UpdatePortfolio/@item.PortfolioId" class="btn btn-success">Güncelle</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Portfolio/CreatePortfolio/" class="btn btn-primary">Yeni Proje Ekle</a>
+</div>

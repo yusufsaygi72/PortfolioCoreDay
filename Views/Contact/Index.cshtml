@@ -1,0 +1,27 @@
+﻿@model List<PortfolioCoreDay.Entities.Contact>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>İletişim Bilgileri</h3>
+    <table class="table table-bordered" style="border: 2px solid #000;">
+        <tr>
+            <th style="border: 1px solid #000;">#</th>
+            <th style="border: 1px solid #000;">E-posta</th>
+            <th style="border: 1px solid #000;">Telefon</th>
+            <th style="border: 1px solid #000;">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="border: 1px solid #000;">@item.ContactId</td>
+                <td style="border: 1px solid #000;">@item.Email</td>
+                <td style="border: 1px solid #000;">@item.Phone</td>
+                <td style="border: 1px solid #000;">
+                    <a href="/Contact/UpdateContact/@item.ContactId" class="btn btn-success">Bilgileri Düzenle</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

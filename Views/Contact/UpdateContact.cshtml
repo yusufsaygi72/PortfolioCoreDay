@@ -1,0 +1,29 @@
+﻿@model PortfolioCoreDay.Entities.Contact
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>İletişim Bilgisi Güncelle</h3>
+    <form action="/Contact/UpdateContact" method="post">
+        <input type="hidden" name="ContactId" value="@Model.ContactId" />
+
+        <label>Adres</label>
+        <textarea name="Address" class="form-control" style="border: 1px solid #000;">@Model.Address</textarea>
+        <br />
+
+        <label>Telefon</label>
+        <input type="text" name="Phone" value="@Model.Phone" class="form-control" style="border: 1px solid #000;" />
+        <br />
+
+        <label>E-posta</label>
+        <input type="email" name="Email" value="@Model.Email" class="form-control" style="border: 1px solid #000;" />
+        <br />
+
+        <label>Harita URL</label>
+        <input type="text" name="MapUrl" value="@Model.MapUrl" class="form-control" style="border: 1px solid #000;" />
+        <br />
+
+        <button type="submit" class="btn btn-primary">Değişiklikleri Kaydet</button>
+    </form>
+</div>

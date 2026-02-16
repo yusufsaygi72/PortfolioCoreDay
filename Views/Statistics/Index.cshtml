@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <h3 class="fw-bold mb-4">İstatistik Paneli</h3>
+
+    <div class="row">
+        @* Yetenek İstatistikleri *@
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000;">
+                <div class="card-body">
+                    <h6 class="text-muted">Toplam Yetenek</h6>
+                    <h2 class="fw-bold">@ViewBag.v1</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000;">
+                <div class="card-body">
+                    <h6 class="text-muted">Yetenek Puan Toplamı</h6>
+                    <h2 class="fw-bold text-primary">@ViewBag.v2</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000;">
+                <div class="card-body">
+                    <h6 class="text-muted">Yetenek Ortalaması</h6>
+                    <h2 class="fw-bold text-success">@ViewBag.v3</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000;">
+                <div class="card-body">
+                    <h6 class="text-muted">Yüksek Yetenek (>80)</h6>
+                    <h2 class="fw-bold text-warning">@ViewBag.v4</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        @* Genel Sayılar *@
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000; background-color: #f8f9fa;">
+                <div class="card-body">
+                    <h6 class="text-muted">Hizmet Sayısı</h6>
+                    <h3 class="fw-bold">@ViewBag.v5</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000; background-color: #f8f9fa;">
+                <div class="card-body">
+                    <h6 class="text-muted">Referans Sayısı</h6>
+                    <h3 class="fw-bold">@ViewBag.v6</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-dark text-center" style="border: 2px solid #000; background-color: #f8f9fa;">
+                <div class="card-body">
+                    <h6 class="text-muted">Proje Sayısı</h6>
+                    <h3 class="fw-bold">@ViewBag.v7</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      
+        <div class="col-md-4 mb-4">
+            <div class="card bg-dark text-white text-center" style="border: 2px solid #000;">
+                <div class="card-body">
+                    <h6>Toplam Mesaj</h6>
+                    <h2 class="fw-bold">@ViewBag.v8</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card border-success text-center" style="border: 2px solid #28a745;">
+                <div class="card-body text-success">
+                    <h6>Okunan Mesajlar</h6>
+                    <h2 class="fw-bold">@ViewBag.v9</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card border-danger text-center" style="border: 2px solid #dc3545;">
+                <div class="card-body text-danger">
+                    <h6>Okunmayan Mesajlar</h6>
+                    <h2 class="fw-bold">@ViewBag.v10</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

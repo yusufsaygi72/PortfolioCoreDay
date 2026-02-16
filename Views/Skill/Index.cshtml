@@ -1,0 +1,32 @@
+﻿@model List<PortfolioCoreDay.Entities.Skill>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>Yetenek Listesi</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Yetenek</th>
+                <th>Değer</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SkillID</td>
+                    <td>@item.SkillName</td>
+                    <td>@item.SkillValue</td>
+                    <td>
+                        <a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Skill/CreateSkill" class="btn btn-primary">Yeni Yetenek Ekle</a>
+</div>

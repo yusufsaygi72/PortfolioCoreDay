@@ -1,0 +1,10 @@
+﻿@model List<PortfolioCoreDay.Entities.SocialMedia>
+
+<div class="social-links text-center">
+    @foreach (var item in Model)
+    {
+        <a href="@item.Url" class="social-link" target="_blank">
+            <i class="@item.Icon"></i>
+        </a>
+    }
+</div>

@@ -1,0 +1,12 @@
+﻿@using PortfolioCoreDay.Entities
+@model List<Job>
+
+
+@{
+    var jobTitles = string.Join(",", Model.Select(x => x.JobName));
+}
+
+<p>
+    <span class="typed" data-typed-items="@jobTitles"></span>
+    <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
+</p>

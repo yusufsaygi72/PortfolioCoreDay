@@ -1,0 +1,28 @@
+﻿@model PortfolioCoreDay.Entities.Skill
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+    <h3>Yeni Yetenek Ekle</h3>
+
+    <form asp-controller="Skill" asp-action="CreateSkill" method="post">
+
+        <div class="form-group">
+            <label>Yetenek Adı</label>
+            <input type="text" name="SkillName" class="form-control" required />
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <label>Yetenek Oranı</label>
+            <input type="number" name="SkillValue" class="form-control" required />
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-info">Kaydet</button>
+
+    </form>
+</div>

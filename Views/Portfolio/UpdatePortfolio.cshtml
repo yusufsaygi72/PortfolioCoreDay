@@ -1,0 +1,32 @@
+﻿@model PortfolioCoreDay.Entities.Portfolio
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Proje Güncelle</h3>
+    <form action="/Portfolio/UpdatePortfolio" method="post">
+        <input type="hidden" name="PortfolioId" value="@Model.PortfolioId" />
+
+        <label>Proje Başlığı</label>
+        <input type="text" name="Title" value="@Model.Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Kategori</label>
+        <select name="CategoryId" class="form-control" style="border: 1px solid #000;" required>
+            @foreach (var item in (SelectList)ViewBag.Categories)
+            {
+                <option value="@item.Value" selected="@(item.Value == Model.CategoryId.ToString())">@item.Text</option>
+            }
+        </select>
+        <br />
+        <label>Görsel URL</label>
+        <input type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Github URL</label>
+        <input type="text" name="GithubUrl" value="@Model.GithubUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" style="border: 1px solid #000;" required>@Model.Description</textarea>
+        <br />
+        <button type="submit" class="btn btn-success" style="width:100%">Değişiklikleri Kaydet</button>
+    </form>
+</div>

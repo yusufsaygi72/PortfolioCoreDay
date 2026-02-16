@@ -1,0 +1,27 @@
+﻿@model PortfolioCoreDay.Entities.Service
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Hizmet Güncelle</h3>
+    <form action="/Service/UpdateService" method="post">
+        <input type="hidden" name="ServiceId" value="@Model.ServiceId" />
+
+        <label>Hizmet Başlığı</label>
+        <input type="text" name="title" value="@Model.title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" style="border: 1px solid #000;" required>@Model.Description</textarea>
+        <br />
+
+        <div class="form-check">
+            <input type="checkbox" name="Status" value="true" @(Model.Status ? "checked" : "") class="form-check-input" id="statusUpdate" />
+            <label class="form-check-label" for="statusUpdate">Aktif mi?</label>
+            <input type="hidden" name="Status" value="false" />
+        </div>
+        <br />
+
+        <button type="submit" class="btn btn-success">Güncelle</button>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+﻿@model List<PortfolioCoreDay.Entities.Testimonial>
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Referans Listesi</h3>
+    <table class="table table-bordered" style="border: 2px solid #000;">
+        <tr>
+            <th style="border: 1px solid #000;">#</th>
+            <th style="border: 1px solid #000;">Görsel</th>
+            <th style="border: 1px solid #000;">Ad Soyad</th>
+            <th style="border: 1px solid #000;">Unvan</th>
+            <th style="border: 1px solid #000;">Sil</th>
+            <th style="border: 1px solid #000;">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="border: 1px solid #000;">@item.TestimonialId</td>
+                <td style="border: 1px solid #000;"><img src="@item.ImageUrl" width="50" height="50" style="border-radius:50%" /></td>
+                <td style="border: 1px solid #000;">@item.NameSurname</td>
+                <td style="border: 1px solid #000;">@item.Title</td>
+                <td style="border: 1px solid #000;"><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
+                <td style="border: 1px solid #000;"><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Testimonial/CreateTestimonial/" class="btn btn-primary">Yeni Referans Ekle</a>
+</div>

@@ -1,0 +1,28 @@
+﻿@model PortfolioCoreDay.Entities.Testimonial
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Referans Güncelle</h3>
+    <form action="/Testimonial/UpdateTestimonial" method="post">
+        <input type="hidden" name="TestimonialId" value="@Model.TestimonialId" />
+
+        <label>Ad Soyad</label>
+        <input type="text" name="NameSurname" value="@Model.NameSurname" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Unvan / Şirket</label>
+        <input type="text" name="Title" value="@Model.Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Görsel URL</label>
+        <input type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+
+        <label>Yorum / Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" style="border: 1px solid #000;" required>@Model.Description</textarea>
+        <br />
+
+        <button type="submit" class="btn btn-success">Değişiklikleri Kaydet</button>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+﻿@model PortfolioCoreDay.Entities.Experience
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Deneyim Güncelle</h3>
+    <form action="/Experience/UpdateExperience" method="post">
+        <input type="hidden" name="ExperienceId" value="@Model.ExperienceId" />
+
+        <label>Şirket Adı</label>
+        <input type="text" name="CompanyName" value="@Model.CompanyName" class="form-control" required />
+        <br />
+
+        <label>Başlık (Pozisyon)</label>
+        <input type="text" name="Title" value="@Model.Title" class="form-control" required />
+        <br />
+
+        <label>Deneyim Tarihi</label>
+        <input type="text" name="ExperienceDate" value="@Model.ExperienceDate" class="form-control" required />
+        <br />
+
+        <label>Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" required>@Model.Description</textarea>
+        <br />
+
+        <button type="submit" class="btn btn-success">Değişiklikleri Kaydet</button>
+    </form>
+</div>

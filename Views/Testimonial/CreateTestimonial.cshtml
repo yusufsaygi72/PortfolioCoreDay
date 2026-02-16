@@ -1,0 +1,22 @@
+﻿@model PortfolioCoreDay.Entities.Testimonial
+@{
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+<div class="container mt-4">
+    <h3>Yeni Referans Ekle</h3>
+    <form action="/Testimonial/CreateTestimonial" method="post">
+        <label>Ad Soyad</label>
+        <input type="text" name="NameSurname" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Unvan / Şirket</label>
+        <input type="text" name="Title" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Görsel URL</label>
+        <input type="text" name="ImageUrl" class="form-control" style="border: 1px solid #000;" required />
+        <br />
+        <label>Yorum / Açıklama</label>
+        <textarea name="Description" rows="4" class="form-control" style="border: 1px solid #000;" required></textarea>
+        <br />
+        <button type="submit" class="btn btn-primary">Referansı Kaydet</button>
+    </form>
+</div>
